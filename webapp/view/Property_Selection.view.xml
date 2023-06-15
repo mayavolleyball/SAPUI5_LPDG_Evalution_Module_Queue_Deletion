@@ -1,0 +1,96 @@
+<mvc:View controllerName="devicerecognition.controller.Property_Selection"
+       xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:l="sap.ui.layout"
+	xmlns:w="sap.ui.webc.main"
+    xmlns:dr="sap.ui.webc.main"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="SSpage" title="{i18n>title}">
+        <content>
+            <f:SimpleForm id="SimpleFormDisplay354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+           	emptySpanXL="2"
+			emptySpanL="2"
+			emptySpanM="2"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			ariaLabelledBy="Title1"
+			singleContainerFullSize="false" >
+			<f:toolbar>
+				<Toolbar id="toolBarId">
+					<Title id="Title1"  titleStyle="H5" text="Choose a property or search for it with" />	
+				</Toolbar>
+			</f:toolbar>
+			<f:content>
+				<Label id="labelId" text="{i18n>PropNum}" design="Bold"/>
+                <HBox id="hBoxId">
+                <Input   id="tplnrInput"/>
+                <!-- <Text id="checkText" text="{textModel>/myName}" /> -->
+                <!-- <Input   id="tplnrTxt" value=""/> -->
+                <Button id="searchBtn" icon="sap-icon://search" type="Emphasized" press="onSearch" width="10%" />
+                </HBox>
+                <!-- <core:Title id="titleId" class="ttlCls"/> -->
+                <!-- <Label text="{i18n>AccPeriod}" design="Bold" id="AcPeriodLbl" visible="false"/> -->
+                	<!-- <dr:DateRangePicker
+                            visible="false"
+							id="DRP1"
+							placeholder="{i18n>Enter_Dt}"
+							change="handleChange"
+							class="sapUiSmallMarginBottom"/> -->
+				<!-- <Select forceSelection="false" visible="false" id="AcPeriod">
+					<core:Item id="itemIdOne" key="000" text="01-07-2021 - 30-06-2022 | (000)" />
+					<core:Item id="itemIdTwo" key="001" text="01-07-2022 - 30-06-2023 | (001)" />
+					<core:Item id="itemIdThree" key="002" text="01-07-2023 - 30-06-2024 | (002)" />
+				</Select> -->
+			</f:content>
+		</f:SimpleForm>
+		<!-- <w:MessageStrip
+				id="msgStrip"
+				visible="false"
+				text=""
+				design="Negative"
+				class="sapUiMediumMarginBottom"
+				close="handleCloseMsg">
+			</w:MessageStrip> -->
+        <Toolbar id="toolBarIdTwo">
+        <Button  text="{i18n>back}" enabled="false" id="backBtn" icon="sap-icon://close-command-field" type="Emphasized" press="onBack" ></Button>
+        <ToolbarSpacer id="toolBarSpacerId"/>
+        <!-- <Button text="{i18n>ViewMode}" id="EditContinueBtn" visible="false" iconFirst="false"  type="Emphasized" press="onEditContinue" ></Button> -->
+        <Button id="buttonIdTwo" text="{i18n>continue}" iconFirst="false" icon="sap-icon://open-command-field" type="Emphasized" press="onContinue" ></Button>
+        </Toolbar> 
+         </content>
+    </Page>
+</mvc:View>
+    <!-- xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" showHeader="false">
+        <content>
+        	<core:ComponentContainer id="compId" height="25%"
+			    name="Selection_Screen"			    
+			    component="ZPROPSELECT">
+			</core:ComponentContainer>
+            <Toolbar id="toolId">
+             <Button id="buttonBackId" type="Emphasized" text="{i18n>continue}" press="onPressNavigationForward" class="sapUiSmallMarginTop"/>
+             <Button id="buttonContinueId" type="Emphasized" text="{i18n>continue}" press="onPressNavigationForward" class="sapUiSmallMarginTop"/>
+           </Toolbar>
+            
+         <VBox id="homeVBoxId" class="sapUiTinyMarginTop" alignItems="Center" justifyContent="Center">
+        <Input
+			id="myInput"
+			placeholder="{i18n>enterProperty}"
+			showValueHelp="true">
+		</Input>
+        <Button id="screenOneId" type="Emphasized" text="{i18n>continue}" press="onPressNavigationForward" class="sapUiSmallMarginTop"/>
+        </VBox> 
+        </content>
+    </Page>
+</mvc:View>-->

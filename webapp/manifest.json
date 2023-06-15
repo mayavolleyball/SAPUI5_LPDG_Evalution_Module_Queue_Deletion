@@ -1,0 +1,160 @@
+{
+    "_version": "1.49.0",
+    "sap.app": {
+        "id": "devicerecognition",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.9.6",
+            "toolsId": "855c302a-8dc0-4f63-bbbb-9d8cb3b81924"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/Z_BEWERTUNG_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/mainService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "Z_MARABR_LG_SRV": {
+                "uri": "/sap/opu/odata/sap/Z_MARABR_LG_SRV",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/Z_MARABR_LG_SRV/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.114.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "devicerecognition.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            },
+            "Z_MARABR_LG_SRV": {
+                "dataSource": "Z_MARABR_LG_SRV",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "devicerecognition.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "HomePropertySelectionView",
+                    "target": "TargetPropertySelection"
+                },
+                {
+                    "pattern": "propertyDelete/{Tplnr}",
+                    "name": "propertyDelete",
+                    "target": "PropertyTarget"
+                },
+                {
+                    "pattern": "propertiesDelete/{Tplnr}",
+                    "name": "propertiesDelete",
+                    "target": "DeleteSelectionTarget"
+                }
+            ],
+            "targets": {
+                "TargetPropertySelection": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Property_Selection",
+                    "viewName": "Property_Selection"
+                },
+                "PropertyTarget": {
+                    "viewType": "XML",
+                    "viewId": "Vorrat_Loschen",
+                    "viewName": "Vorrat_Loschen"
+                },
+                "DeleteSelectionTarget": {
+                    "viewType": "XML",
+                    "viewId": "Auswahl_Loschen",
+                    "viewName": "Auswahl_Loschen"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "devicerecognition.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}
