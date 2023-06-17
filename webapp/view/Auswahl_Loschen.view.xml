@@ -2,7 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}" titleAlignment="Center" navButtonPress="onBack" showNavButton="true">
+    <Page id="page" title="{i18n>title}" titleAlignment="Center" navButtonPress="onBack" showNavButton="false" class="pageCls sapUiSizeCompact">
         <content>
 		<VBox id="vBoxId1" alignItems="Center">
 		<FlexBox id="flex1" width="30%" justifyContent="Center" alignItems="Center">
@@ -34,8 +34,8 @@
 	</Table>
 	</FlexBox>
 	<FlexBox id="flex2" width="30%" class="sapUiSmallMarginTop" justifyContent="SpaceBetween" alignItems="Center">
-                <Button id="backId1" type="Emphasized" text="{i18n>back}"  press="onBack"/> 
-                <Button id="clearStockId1" type="Emphasized" text="{i18n>deleteSelection}" press="onSelectionClearance" ariaHasPopup="Dialog"/>
+                <Button id="backId1" type="Emphasized" text="{i18n>back}" class="spaceBackBtnCls" press="onBack"/> 
+                <Button id="clearStockId1" type="Emphasized" text="{i18n>deleteSelection}" press="onSelectionClearance" ariaHasPopup="Dialog" class="spaceDelBtnCls"/>
 				 <!-- <Button id="check" type="Emphasized" text="Check" press="ondeleteItems"/> -->
 	</FlexBox>
 	</VBox>
@@ -44,4 +44,3 @@
     </Page>
 </mvc:View>
  
-
