@@ -45,7 +45,7 @@ sap.ui.define([
                 propertyValue = oArgs.Tplnr;
                 //console.log(propertyValue);
                 // @ts-ignore
-                this.getView().byId("propertyTextId").setText(oArgs.Tplnr);
+                this.getView().byId("VLPropTxtId").setText(oArgs.Tplnr);
                 //console.log("propertyValue: " +propertyValue);
             },
             changeRegion: function(event) {
@@ -54,16 +54,16 @@ sap.ui.define([
                 if(selectedIndexValue)
                 {
                 // @ts-ignore
-                this.getView().byId("clearStockId1").setVisible(false);
+                this.getView().byId("VLDelBtnId").setVisible(false);
                 // @ts-ignore
-                this.getView().byId("forwardId1").setVisible(true);
+                this.getView().byId("VLCtnBtnId").setVisible(true);
                 }
                 else
                 {
                 // @ts-ignore
-                this.getView().byId("forwardId1").setVisible(false);
+                this.getView().byId("VLCtnBtnId").setVisible(false);
                 // @ts-ignore
-                this.getView().byId("clearStockId1").setVisible(true);
+                this.getView().byId("VLDelBtnId").setVisible(true);
 
                 }
                 //console.log(event.getParameter("selectedIndex"));

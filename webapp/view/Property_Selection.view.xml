@@ -6,42 +6,44 @@
 	xmlns:f="sap.ui.layout.form"
 	xmlns:core="sap.ui.core"
 	xmlns="sap.m">
-	<Page id="SSpage" title="{i18n>title}" class="pageCls sapUiSizeCompact">
+	<Page id="propSelPage" title="{i18n>title}" class="pageCls sapUiSizeCompact">
 		<customHeader>
-			<Bar id="barIdOne">
+			<Bar id="PSBarIdOne">
 				<contentMiddle>
-					<Title id="headerTiltle" class="hdrclass" text="{i18n>title}" />
+					<Title id="PSHeaderTiltle" class="hdrclass" text="{i18n>title}" />
 				</contentMiddle>
 			</Bar>
 		</customHeader>
 		<content>
+			<!-- <Title id="VLPageSubTitle" text="{i18n>propSelection}" class="tableTitleCls" /> -->
 			<f:SimpleForm id="SimpleFormDisplay354" class=".urGrpTtlWeb1" editable="true"
 				layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
 				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="2" emptySpanL="2"
 				emptySpanM="2" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
 				ariaLabelledBy="Title1" singleContainerFullSize="false">
 				<f:toolbar>
-					<Toolbar id="toolBarId">
-						<Title id="Title1" titleStyle="H5"
-							text="Choose a property or search for it with" />
+					<Toolbar id="PSToolBarIdOne">
+						<Title id="PSTitleOne" titleStyle="H5"
+							text="{i18n>psSubTitle}" class="formHeaderCls"/>
 					</Toolbar>
 				</f:toolbar>
 				<f:content>
-					<Label id="labelId" text="{i18n>PropNum}" design="Bold" />
-					<HBox id="hBoxId">
-						<Input id="tplnrInput" liveChange="onchangeTplnr" submit="onSubmitTplnr"/>
-						<!-- <Text id="checkText" text="{textModel>/myName}" /> -->
-						<Text id="tplnrTxt" visible="false"/>
-						<!-- <Input   id="tplnrTxt" value=""/> -->
-						<Button id="searchBtn"  class="searchBtnCls" icon="sap-icon://search" type="Emphasized" press="onSearch" width="10%"/>
+					<Label id="PSLabelIdOne" text="{i18n>PropNum}" design="Bold" />
+					<HBox id="PSHBoxIdOne">
+						<Input id="PSTplnrInput" liveChange="onchangeTplnr" submit="onSubmitTplnr" />
+						<Text id="PSTplnrTxt" visible="false" />
+						<Button id="PSsearchBtn" class="psSearchBtnCls" icon="sap-icon://search"
+							type="Emphasized" press="onSearch" width="10%" />
 					</HBox>
 				</f:content>
 			</f:SimpleForm>
-			<Toolbar id="toolBarIdTwo">
-				<Button text="{i18n>back}" enabled="false" visible="false" id="backBtn" class="contBtnCls"
+			<Toolbar id="PSToolBarIdTwo">
+				<Button text="{i18n>back}" enabled="false" visible="false" id="backBtn"
+					class="contBtnCls"
 					icon="sap-icon://close-command-field" type="Emphasized" press="onBack"></Button>
-				<ToolbarSpacer id="toolBarSpacerId" />
-				<Button id="buttonIdTwo" text="{i18n>continue}" iconFirst="false" class="contBtnCls"
+				<ToolbarSpacer id="PSToolBarSpacerId" />
+				<Button id="PSCtnButtonId" text="{i18n>continue}" iconFirst="false"
+					class="contBtnCls"
 					icon="sap-icon://open-command-field" type="Emphasized" press="onContinue"></Button>
 			</Toolbar>
 		</content>

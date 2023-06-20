@@ -4,11 +4,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/comp/library", "sap/ui/mode
     //var tt;
         return e.extend("devicerecognition.controller.Property_Selection", {
             onInit: function () {
+                var oModel = this.getOwnerComponent().getModel("Z_MARABR_LG_SRV");
+                
                 this.oModel = this.getOwnerComponent().getModel("Z_MARABR_LG_SRV");
-                // this.byId("tplnrInput").setValue("");
+                // this.byId("PSTplnrInput").setValue("");
             },
             onAfterRendering:function(){
-                // this.byId("tplnrInput").setValue("");
+                // this.byId("PSTplnrInput").setValue("");
             },
             onFilterBarSearch: function() {
                 var e = [];
@@ -50,7 +52,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/comp/library", "sap/ui/mode
                 })
             },
             onSearch: function (e) {
-                var myValue = this.byId("tplnrInput").getValue();
+                var myValue = this.byId("PSTplnrInput").getValue();
                 // tt = myValue;
                 // console.log(tt);
                 const oTextModel = new JSONModel({
@@ -176,7 +178,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/comp/library", "sap/ui/mode
                 this._bDialogInitialized = true;
                 var i = new sap.ui.model.json.JSONModel([]);
                 this._oVHD.getTable().setModel(i);
-                var r = this.byId("tplnrInput").getValue();
+                var r = this.byId("PSTplnrInput").getValue();
                 var o = r ? true : false;
                 var t = this.pDialog.getFilterBar();
                 t.setFilterBarExpanded(o);
@@ -308,10 +310,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/comp/library", "sap/ui/mode
             //     this.byId("backBtn").setVisible(false)
             // },
             onContinue: function() {
-                // var i = this.byId("tplnrInput").getValue();
+                // var i = this.byId("PSTplnrInput").getValue();
                 // var len= i.length;
                 // if (len) {
-                //     var e = this.byId("tplnrInput").getText();
+                //     var e = this.byId("PSTplnrInput").getText();
                 //     var t = sap.ui.core.UIComponent.getRouterFor(this);
                 //     t.navTo("propertyDelete", { Tplnr: e })
                 // }
@@ -322,7 +324,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/comp/library", "sap/ui/mode
                 // else {
                 //         this.PerioRead(i)
                 //     }
-                var propNum=this.byId("tplnrInput").getValue();
+                var propNum=this.byId("PSTplnrInput").getValue();
                 if (propNum === "") {
                     sap.m.MessageToast.show("please enter a valid property number");
                     return

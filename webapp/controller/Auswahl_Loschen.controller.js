@@ -61,7 +61,7 @@ sap.ui.define([
                 // @ts-ignore
                 propertyValue = oArgs.Tplnr;
                 // @ts-ignore
-                this.getView().byId("propertyTextId").setText(propertyValue);
+                this.getView().byId("ALPropTxtId").setText(propertyValue);
                 //console.log("propertyValue: " + propertyValue);
                 var oModel = this.getOwnerComponent().getModel();
                 var propertyNumber = propertyValue;
@@ -85,7 +85,7 @@ sap.ui.define([
             onSelectionClearance: function () {
                 var that = this;
                 // @ts-ignore
-                var selectedItems = this.getView().byId("tableId").getSelectedItems();
+                var selectedItems = this.getView().byId("ALTableId").getSelectedItems();
                 var len = selectedItems.length;
                 if (len == 0) {
                     MessageToast.show("No Selections made. Please try again! ");
@@ -101,7 +101,7 @@ sap.ui.define([
                             beginButton: new Button({
                                 text: "Yes",
                                 press: function () {
-                                    that.ondeleteItems();
+                                    that.OnDeleteItems();
                                     MessageToast.show("Successfully deleted the selected stocks!");
                                     this.oApproveDialog.close();
                                 }.bind(this)
@@ -121,10 +121,10 @@ sap.ui.define([
             },
 
             // @ts-ignore
-            ondeleteItems: function (oEvent) {
+            OnDeleteItems: function (oEvent) {
                 var oModel = this.getOwnerComponent().getModel();
                 // @ts-ignore
-                var selectedItems = this.getView().byId("tableId").getSelectedItems();
+                var selectedItems = this.getView().byId("ALTableId").getSelectedItems();
                 //var oEntry = selectedItems.getBindingContext();
                 //console.log(selectedItems);
                 //console.log(oEntry);
