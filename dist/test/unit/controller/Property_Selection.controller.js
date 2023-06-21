@@ -1,0 +1,2 @@
+sap.ui.define(["device_recognition/controller/Property_Selection.controller"],function(e){"use strict";QUnit.module("Property_Selection Controller");QUnit.test("I should test the Property_Selection controller",function(t){var o=new e;o.onInit();t.ok(o)})});
+//# sourceMappingURL=Property_Selection.controller.js.map

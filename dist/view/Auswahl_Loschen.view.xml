@@ -1,0 +1,60 @@
+<mvc:View controllerName="devicerecognition.controller.Auswahl_Loschen"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" displayBlock="true"
+	xmlns="sap.m">
+	<Page id="aLoschenPage" title="{i18n>title}" titleAlignment="Center" navButtonPress="onBack"
+		showNavButton="false" class="pageCls sapUiSizeCompact">
+		<customHeader>
+			<Bar id="ALBarIdOne">
+				<contentMiddle>
+					<Title id="ALHeaderTiltle" class="hdrclass" text="{i18n>title}" />
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+			<VBox id="ALVBoxIdOne" alignItems="Start" class="sapUiResponsiveMargin">
+				<!-- <FlexBox id="ALFlexBoxIdOne" width="30%" justifyContent="Start" alignItems="Start"> -->
+					<Title id="ALTitleIdOne" text="{i18n>deviceSelection}" level="H2" class="tableTitleCls"/>
+					<Table id="ALTableId" mode="MultiSelect" items="{myAlias>/}"
+						sticky="HeaderToolbar,InfoToolbar,ColumnHeaders" growing="true"
+						growingThreshold="10" growingScrollToLoad="true" contextualWidth="auto"
+						class=".urGrpTtlWeb2" backgroundDesign="Solid" width="30%">
+						<!--<headerToolbar>
+							 <Toolbar id="ALToolBarIdOne" > -->
+								<Text id="ALPropTxtId" visible="false" text="{i18n>propNumText}" />
+								<!-- <ToolbarSpacer id="ALToolBarSpacerIdOne" />
+								 <CheckBox id="checkBoxId1" text="Strict Layout"
+								select="onCheckBoxSelect"/> -->
+							<!--</Toolbar> 
+						</headerToolbar>-->
+						<columns> 
+							<Column id="UUcol1" width="12em">
+								<Text id="UUinput1" text="{i18n>usefulUnit}" />
+							</Column>
+							<Column id="Dcol2" width="12em">
+								<Text id="Dinput2" text="{i18n>device}" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem id="ALcolList1" vAlign="Middle">
+								<cells>
+									<ObjectIdentifier id="ALtext1" text="{myAlias>zznutzeinheit}" />
+									<ObjectIdentifier id="ALtext2" text="{myAlias>zzgernr}" />
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				<!-- </FlexBox> -->
+				<FlexBox id="ALFlexBoxIdTwo" width="30%" class="sapUiSmallMarginTop"
+					justifyContent="SpaceBetween" alignItems="Center">
+					<Button id="ALBackBtnId" type="Emphasized" text="{i18n>back}"
+						class="spaceBackTwoBtnCls" press="onBack" />
+					<ToolbarSpacer id="ALToolBarSpacerIdTwo" />
+					<Button id="ALDelBtnId" type="Emphasized" text="{i18n>deleteSelection}"
+						press="onSelectionClearance" ariaHasPopup="Dialog" class="spaceDelTwoBtnCls" />
+					<!-- <Button id="check" type="Emphasized" text="Check" press="ondeleteItems"/> -->
+				</FlexBox>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

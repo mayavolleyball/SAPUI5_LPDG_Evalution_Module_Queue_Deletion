@@ -1,0 +1,36 @@
+<mvc:View controllerName="devicerecognition.controller.Vorrat_Loschen"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="VLoschenPage" title="{i18n>title}" titleAlignment="Center" navButtonPress="onBack" showNavButton="false" class="pageCls sapUiSizeCompact">
+        <customHeader>
+            <Bar id="VLBarIdOne">
+                <contentMiddle>
+                    <Title id="VLHeaderTiltle" class="hdrclass" text="{i18n>title}" />
+                </contentMiddle>
+            </Bar>
+        </customHeader>
+        <content>
+            <!-- <VBox id="vBoxId1" alignContent="Stretch" alignItems="Center" class="sapUiSmallMarginTop"> -->
+            <!-- <Title id="vorratTitleId" text="{i18n>subTitleThree}" class="sapUiSmallMarginTop"></Title> -->
+            <Title id="VLPageSubTitle" text="{i18n>clearReviewList}" class="sapVLMTitle" />
+            <RadioButtonGroup id="VLradioButtonGroup1" columns="2" width="100%" select=".changeRegion">
+                <RadioButton id="VLRadioButtonIdOne" text="{i18n>clearStock}" selected="true" class="sapUiSmallMarginEnd" />
+                <RadioButton id="VLRadioButtonIdTwo" text="{i18n>deleteDevices}" class="sapUiSmallMarginBeginEnd" />
+            </RadioButtonGroup>
+            <HBox id="VLHBoxIdOne" justifyContent="SpaceBetween">
+                <Toolbar id="VLToolBarIdOne">
+                    <Button id="VLBackBtnId" type="Emphasized" text="{i18n>back}" class="spaceBackBtnCls" press="onBack" />
+                    <!-- <OverflowToolbar id="spaceIdOne" /> -->
+                    <Button id="VLDelBtnId" type="Emphasized" text="{i18n>deleteQueue}" class="spaceDelBtnCls" press="onQueueClearance" ariaHasPopup="Dialog" />
+                    <!-- <ToolbarSpacer id="spaceIdTwo" /> -->
+                    <Button id="VLCtnBtnId" type="Emphasized" text="{i18n>continue}" visible="false" class="spaceCtnBtnCls" press="onContinue" />
+                </Toolbar>
+            </HBox>
+            <Text id="VLPropTxtId" visible="false" />
+            <!-- <Button id="check" text="check" press="onPress"/> -->
+            <!-- <Text id="myId" text="{tplnr}"/> -->
+            <!-- </VBox> -->
+        </content>
+    </Page>
+</mvc:View>
