@@ -63,6 +63,10 @@ sap.ui.define([
                 // @ts-ignore
                 this.getView().byId("ALPropTxtId").setText(propertyValue);
                 //console.log("propertyValue: " + propertyValue);
+                this.oReadingODataModel(propertyValue);
+            },
+            oReadingODataModel:function(propertyValue){
+                var that = this;
                 var oModel = this.getOwnerComponent().getModel();
                 var propertyNumber = propertyValue;
                 // @ts-ignore
@@ -121,7 +125,7 @@ sap.ui.define([
             },
 
             // @ts-ignore
-            OnDeleteItems: function (oEvent) {
+            OnDeleteItems: function () {
                 var oModel = this.getOwnerComponent().getModel();
                 // @ts-ignore
                 var selectedItems = this.getView().byId("ALTableId").getSelectedItems();
@@ -167,6 +171,9 @@ sap.ui.define([
                 oModel.create("/lgSet", obj, {
                     // @ts-ignore
                     success: function (data, response) {
+                        that.oReadingODataModel(propertyValue);
+                       // oModel.refresh();
+                        // that._onRouteMatched();
                         //MessageToast.show("Data successfully posted");
 
                         //console.log();

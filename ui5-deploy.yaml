@@ -18,7 +18,7 @@ builder:
           client: "400"
         app:
           name: Z_EVALUATION
-          description: Evalution Module - Stock Clearance
+          description: Evalution Module -> Stock Clearance
           package: zmares_fiori
           transport: D38K9A12I6
         exclude:

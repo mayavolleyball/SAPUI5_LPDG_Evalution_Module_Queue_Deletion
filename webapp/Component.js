@@ -3,11 +3,15 @@
  */
 
 sap.ui.define([
-        "sap/ui/core/UIComponent",
-        "sap/ui/Device",
-        "devicerecognition/model/models"
-    ],
-    function (UIComponent, Device, models) {
+    "sap/ui/core/UIComponent",
+    "sap/ui/Device",
+    "devicerecognition/model/models",
+    // "com/minol/util/framework/ui5/common/web/classes/Translation",
+    // "sap/m/Button", 
+    // "sap/m/Dialog",
+    //  "sap/m/Text"
+],
+    function (UIComponent, Device, models){ //Translation, Button, Dialog, Text) {
         "use strict";
 
         return UIComponent.extend("devicerecognition.Component", {
@@ -23,9 +27,14 @@ sap.ui.define([
             init: function () {
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
-                
+
                 //Calling the selection screen
                 //jQuery.sap.registerModulePath("Selection_Screen", "../ZPROPSELECT");
+
+                // set i18n model
+                // var i18nModel = UtilTranslation.readI18n(this,
+                //     "devicerecognition/webapp/i18n/i18n.properties","devicerecognition"); 
+                //  com.minol.util.framework.ui5.common.web.classes.Formatter.setDeviceModel(this);
 
                 // enable routing
                 this.getRouter().initialize();

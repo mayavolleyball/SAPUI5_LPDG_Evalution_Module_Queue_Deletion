@@ -75,7 +75,8 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "devicerecognition.i18n.i18n"
+                    "bundleName": "devicerecognition.i18n.i18n",
+                    "supportedLocales": ["de",""]
                 }
             },
             "": {
